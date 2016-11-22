@@ -80,7 +80,7 @@ api.set = function set (obj, pointer, value) {
         }
         nextTok = refTokens[i + 1];
 
-        if (!(tok in obj)) {
+        if (!(tok in obj)|| !obj[tok]) {
             if (nextTok.match(/^(\d+|-)$/)) {
                 obj[tok] = [];
             } else {
